@@ -53,7 +53,7 @@ router.route('/issues/update/:id').post((req, res) => {
             return next(new Error('Could not load document'))
         } else {
             issue.title = req.body.title;
-            issue.responsoble = req.body.responsible;
+            issue.responsible = req.body.responsible;
             issue.description = req.body.description;
             issue.severity = req.body.severity;
             issue.status = req.body.status;
@@ -63,6 +63,16 @@ router.route('/issues/update/:id').post((req, res) => {
             }).catch (err => {
                 res.status(400).send('Update failed');
             })
+        }
+    });
+});
+
+router.route('/issues/delete/:id').get((req, res) => {
+    Issue.findByIdAndRemove({_id: req.params.id}, (err, issue) => {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json('Remove successfully');
         }
     });
 });
