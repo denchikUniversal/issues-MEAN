@@ -11,7 +11,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect();
+mongoose.connect('mongodb://localhost:27017/issues');
 
 const connection = mongoose.connection;
 
