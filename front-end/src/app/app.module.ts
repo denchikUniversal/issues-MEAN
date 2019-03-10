@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { 
   MatToolbarModule, 
@@ -45,6 +46,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MatToolbarModule,
     HttpClientModule,
+    ReactiveFormsModule,
     MatFormFieldModule, 
     MatInputModule, 
     MatOptionModule, 
@@ -54,7 +56,7 @@ const routes: Routes = [
     MatCardModule,
     MatTableModule,
     MatDividerModule,
-    MatSnackBarModule 
+    MatSnackBarModule, 
   ],
   providers: [IssueService],
   bootstrap: [AppComponent]
